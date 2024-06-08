@@ -1,18 +1,24 @@
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import Header from "./layout/Header";
 import Home from "./pages/Home";
-import Footer from "./layout/Footer";
+import Join from "./pages/Join";
+import Login from "./pages/Login";
+import FindLaywer from "./pages/Find-laywer";
+import SearchResult from "./pages/Search-result";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+    
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/join" element={<Join />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/find-lawyer" element={<FindLaywer />} />
+        <Route path="/search-result" element={<SearchResult />} />
  
       </Routes>
-      <Footer />
+    
     </BrowserRouter>
   );
 }
