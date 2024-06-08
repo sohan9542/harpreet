@@ -11,6 +11,7 @@ const FindLaywer = () => {
     },
     {
       image: "/f2.png",
+      href: "/search-result",
       title: "Employment Lawyer",
     },
     {
