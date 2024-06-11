@@ -38,10 +38,10 @@ const SearchResult = () => {
     ]
   return (
     <div className="bg-[#F1FFF4] pb-10 min-h-screen">
-      <Header isloggedIn={true} />
+      <Header isuser={true} />
 
       <div className=" my-[40px] px-3 lg:px-0 mx-auto max-w-[970px]">
-        <Link to="/find-lawer" className="flex items-center mt-8 gap-2">
+        <Link to="/find-lawyer" className="flex items-center mt-8 gap-2">
           <BsArrowLeft className=" w-4 h-4" />
           <p className="text-[14px] ">Go Back</p>
         

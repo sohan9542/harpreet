@@ -4,7 +4,7 @@ import { LuHome } from "react-icons/lu";
 import { FaBars } from "react-icons/fa6";
 import { AiOutlineClose } from "react-icons/ai";
 
-const Header = ({ isloggedIn }) => {
+const Header = ({ isloggedIn, isuser }) => {
   const [open, setOpen] = useState(false)
   return (
     <div className="w-full relative border-b border-black">
@@ -13,17 +13,32 @@ const Header = ({ isloggedIn }) => {
           <h1 className="text-[27px] font-[700] text-[#4D8360]">LawEase</h1>
         </Link>
         {isloggedIn ? (
-          <div>
+          <div className="flex items-center ">
             <Link
               to="/"
-              className="font-semibold  rounded-[12px] px-3  flex items-center gap-1 text-[#4BB070]"
+              className="font-semibold  rounded-[12px] px-3  flex items-center gap-1 "
             >
-              <LuHome className="w-6 h-6" /> <span className="pt-1"> Home</span>
+           <span className="pt-1"> Home</span>
+            </Link>
+            <Link
+              to="/profile"
+              className="font-semibold  rounded-[12px] px-3  flex items-center gap-1 "
+            >
+             <span className="pt-1"> Profile</span>
+            </Link>
+            <Link
+              to="/"
+              className="font-semibold  rounded-[12px] px-3  flex items-center gap-1 "
+            >
+              <span className="pt-1"> Logout</span>
             </Link>
           </div>
         ) : (
         <>
-          <div className=" hidden lg:flex items-center gap-5">
+    {isuser ?      <div className=" hidden lg:flex ">
+            <Link to="/" className="flex items-center gap-2 text-[18px] text-[#4D8360]"><LuHome className="w-5 h-5"/> Home</Link>
+         
+          </div> :       <div className=" hidden lg:flex items-center gap-5">
             <Link to="/">Home</Link>
             <Link to="/services">Services</Link>
             <Link to="/login">Log In</Link>
@@ -33,7 +48,7 @@ const Header = ({ isloggedIn }) => {
             >
               Join
             </Link>
-          </div>
+          </div>}
           <FaBars onClick={()=>setOpen(true)} className=" w-6 h-6 cursor-pointer lg:hidden"/>
         </>
         )}

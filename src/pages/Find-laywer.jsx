@@ -37,7 +37,7 @@ const FindLaywer = () => {
   ];
   return (
     <div className="bg-[#F1FFF4] min-h-screen">
-      <Header isloggedIn={true} />
+      <Header isuser={true} />
       <div className=" py-[40px]">
         <h2 className="text-[26px] font-medium text-center">
           Finding it hard to get legal help ?
